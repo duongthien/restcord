@@ -456,10 +456,12 @@ class DiscordClient
     {
         switch ($tokenType) {
             default:
-                $authorization = 'Bot ';
+                $authorization = '';
                 break;
             case 'OAuth':
                 $authorization = 'Bearer ';
+            case 'Bot':
+                $authorization = 'Bot ';
         }
 
         return $authorization.$token;
