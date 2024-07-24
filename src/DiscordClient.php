@@ -148,14 +148,14 @@ class DiscordClient
                 'rateLimitProvider' => new MemoryRateLimitProvider(),
                 'throwOnRatelimit'  => false,
                 'apiUrl'            => "https://discord.com/api/v{$currentVersion}/",
-                'tokenType'         => 'Bot',
+                'tokenType'         => 'Token',
                 'cacheDir'          => __DIR__.'/../../../cache/',
                 'guzzleOptions'     => [],
                 'middleware'        => [],
             ]
         )
             ->setDefined(['token'])
-            ->setAllowedValues('tokenType', ['Bot', 'OAuth'])
+            ->setAllowedValues('tokenType', ['Bot', 'OAuth',  'Token'])
             ->setAllowedTypes('token', ['string'])
             ->setAllowedTypes('apiUrl', ['string'])
             ->setAllowedTypes('rateLimitProvider', [AbstractRateLimitProvider::class])
